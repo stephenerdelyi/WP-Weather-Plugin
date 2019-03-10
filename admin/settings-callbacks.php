@@ -41,8 +41,9 @@
 	}
 	
 	// callback: checkbox field
-	function stevesweather_callback_checkbox_field($args) {
-						
+	function stevesweather_callback_checkbox_field($args) {	
+		$options = get_option( 'stevesweather_options', stevesweather_options_default() );
+	
 		$id    = isset( $args['id'] )    ? $args['id']    : '';
 		$label = isset( $args['label'] ) ? $args['label'] : '';
 
@@ -56,7 +57,7 @@
 	function stevesweather_callback_section_demo() {
 		$options = get_option( 'stevesweather_options', stevesweather_options_default() );
 		$weatherObj = new Weather($options);
-		//$weatherObj->render();
+		echo $weatherObj->render();
 	}
 	
 	function stevesweather_callback_section_location($args) {

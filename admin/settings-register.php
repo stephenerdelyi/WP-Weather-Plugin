@@ -62,12 +62,12 @@
 		);
 		
 		add_settings_field(
-			'format',
+			'units',
 			'Celsius/Fahrenheit',
 			'stevesweather_callback_select_field',
 			'stevesweather',
 			'stevesweather_section_options',
-			[ 'id' => 'format', 'label' => 'The format you would like your output to be',
+			[ 'id' => 'units', 'label' => 'The format you would like your output to be',
 			  'selectables' => array(
 				'F'	=> 'Fahrenheit',
 				'C'	=> 'Celsius',
@@ -82,15 +82,14 @@
 			'stevesweather_section_options',
 			[ 'id' => 'theme', 'label' => 'The background color for the container',
 			  'selectables' => array(
-				'none'		=> 'None',
-				'red'		=> 'Red',
-				'orange'	=> 'Orange',
-				'yellow'	=> 'Yellow',
+				'teal'		=> 'Teal',
+				'sherbert'	=> 'Sherbert',
+				'evening'	=> 'Evening',
 				'green'		=> 'Green',
-				'blue'		=> 'Blue',
-				'indigo'	=> 'Indigo',
-				'violet'	=> 'Violet',
-				'black'		=> 'Black',
+				'salmon'		=> 'Salmon',
+				'purple'	=> 'Purple',
+				'blush'	=> 'Blush',
+				'orange'		=> 'Orange',
 			  )]
 		);
 		
@@ -101,6 +100,15 @@
 			'stevesweather',
 			'stevesweather_section_options',
 			[ 'id' => 'rounded_corners', 'label' => 'Select to add a light border radius']
+		);
+		
+		add_settings_field(
+			'border',
+			'Border',
+			'stevesweather_callback_checkbox_field',
+			'stevesweather',
+			'stevesweather_section_options',
+			[ 'id' => 'border', 'label' => 'Select to add a 1px border']
 		);
 		
 		add_settings_field(

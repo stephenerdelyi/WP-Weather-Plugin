@@ -17,14 +17,14 @@
 		return array(
 			'city_name' => 'Reno',
 			'country' => 'us',
-			'format' => 'F',
-			'theme' => 'red',
-			'rounded_corners' => false,
+			'units' => 'F',
+			'theme' => 'teal',
+			'rounded_corners' => true,
+			'border' => true,
 			'api_key' => '16efdce8b9629fc18e7f06fb8baa4609',
 		);
 	}
 	
-	//$pluginOptions = get_option('stevesweather_options', stevesweather_options_default());
 	require_once(plugin_dir_path(__FILE__) . 'includes/weather.php');
 		
 	if(is_admin()) {
@@ -42,14 +42,15 @@
 			
 		), $overrides));
 		
-		// begin output variable
-		$output  = '<h3>Custom Example: Shortcodes</h3>';
-		$output .= 'Bg color attribute: ' . $bgcolor;
+		$options = get_option( 'stevesweather_options', stevesweather_options_default() );
+		$weatherObj = new Weather($options);
+		
+		$output .= $weatherObj->render();;
 		
 		// return output
 		return $output;
 		
 	}
 	// register shortcode function
-	add_shortcode( 'stevesweather', 'stevesweather_shortcode_handler' );
+	add_shortcode('stevesweather', 'stevesweather_shortcode_handler');
 ?>

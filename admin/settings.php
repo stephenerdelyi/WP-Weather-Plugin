@@ -4,7 +4,7 @@
 		add_submenu_page(
 			'options-general.php',
 			'Steve\'s Weather Plugin Settings',
-			'Weather Options',
+			'Weather',
 			'manage_options',
 			'stevesweather',
 			'stevesweather_display_settings_page'

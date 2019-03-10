@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600,700");
+.stevesweather {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  display: inline-block;
+  padding: 1.4em 2em; }
+  .stevesweather p {
+    margin: 0; }
+    .stevesweather p.city {
+      font-weight: bold;
+      font-size: 1.4em; }
+    .stevesweather p.conditions {
+      font-style: italic;
+      font-weight: 200; }
+    .stevesweather p.temperature {
+      font-size: 2.8em;
+      font-weight: bold; }
+  .stevesweather img.icon {
+    height: 64px;
+    float: left;
+    margin-top: 7px;
+    margin-right: 20px;
+    margin-left: 5px; }
+  .stevesweather.round {
+    border-radius: 0.75em; }
+  .stevesweather.teal {
+    background: linear-gradient(45deg, #30496B, #30B8D2);
+    color: white; }
+    .stevesweather.teal.border {
+      border: 1px solid #30496B; }
+  .stevesweather.sherbert {
+    background: linear-gradient(45deg, #EF69AD, #FBCA88);
+    color: white; }
+    .stevesweather.sherbert.border {
+      border: 1px solid #EF69AD; }
+  .stevesweather.evening {
+    background: linear-gradient(45deg, #476892, #59355D);
+    color: white; }
+    .stevesweather.evening.border {
+      border: 1px solid #476892; }
+  .stevesweather.green {
+    background: linear-gradient(45deg, #27A47C, #6FE594);
+    color: white; }
+    .stevesweather.green.border {
+      border: 1px solid #27A47C; }
+  .stevesweather.salmon {
+    background: linear-gradient(45deg, #F1467A, #FB949E);
+    color: white; }
+    .stevesweather.salmon.border {
+      border: 1px solid #F1467A; }
+  .stevesweather.purple {
+    background: linear-gradient(45deg, #4C15D0, #DA1FF2);
+    color: white; }
+    .stevesweather.purple.border {
+      border: 1px solid #4C15D0; }
+  .stevesweather.blush {
+    background: linear-gradient(45deg, #FFC2D4, #DBFDEC);
+    color: #4e4e4e; }
+    .stevesweather.blush img.icon {
+      filter: invert(100%);
+      opacity: .7; }
+    .stevesweather.blush.border {
+      border: 1px solid #FFC2D4; }
+  .stevesweather.orange {
+    background: linear-gradient(45deg, #FB7140, #FB9951);
+    color: white; }
+    .stevesweather.orange.border {
+      border: 1px solid #FB7140; }
