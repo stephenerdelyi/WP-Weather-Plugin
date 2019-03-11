@@ -4,41 +4,48 @@
 		exit;
 	}
 	
+	//register plugin settings
 	function stevesweather_register_settings() {
+		//register the options and the validator for it
 		register_setting( 
 			'stevesweather_options', 
 			'stevesweather_options', 
 			'stevesweather_callback_validate_options' 
 		); 
 		
+		//add demo settings section 
 		add_settings_section( 
 			'stevesweather_section_demo', 
 			'Weather Plugin Demo', 
-			'stevesweather_callback_section_demo', 
+			'stevesweather_view_section_demo', 
 			'stevesweather'
 		);
 		
+		//add location settings section
 		add_settings_section( 
 			'stevesweather_section_location', 
 			'Customize Weather Location', 
-			'stevesweather_callback_section_location', 
+			'stevesweather_view_section_location', 
 			'stevesweather'
 		);
 		
+		//add presentation settings section
 		add_settings_section( 
 			'stevesweather_section_options', 
 			'Customize Weather Presentation Options', 
-			'stevesweather_callback_section_options', 
+			'stevesweather_view_section_options', 
 			'stevesweather'
 		);
 		
+		//add API settings section
 		add_settings_section( 
 			'stevesweather_section_api', 
 			'OpenWeatherMap API Key', 
-			'stevesweather_callback_section_api', 
+			'stevesweather_view_section_api', 
 			'stevesweather'
 		);
 		
+		//add city_name settings field
 		add_settings_field(
 			'city_name',
 			'City Name',
@@ -48,6 +55,7 @@
 			[ 'id' => 'city_name', 'length' => '13', 'label' => 'The city name you would like weather for' ]
 		);
 		
+		//add country settings field
 		add_settings_field(
 			'country',
 			'Country',
@@ -61,6 +69,7 @@
 			  )]
 		);
 		
+		//add units settings field
 		add_settings_field(
 			'units',
 			'Celsius/Fahrenheit',
@@ -74,6 +83,7 @@
 			  )]
 		);
 		
+		//add theme settings field
 		add_settings_field(
 			'theme',
 			'Background Color',
@@ -85,14 +95,15 @@
 				'teal'		=> 'Teal',
 				'sherbert'	=> 'Sherbert',
 				'evening'	=> 'Evening',
-				'green'		=> 'Green',
-				'salmon'		=> 'Salmon',
+				'mint'		=> 'Mint',
+				'bubblegum'	=> 'Bubblegum',
 				'purple'	=> 'Purple',
-				'blush'	=> 'Blush',
-				'orange'		=> 'Orange',
+				'blush'		=> 'Blush',
+				'orange'	=> 'Orange',
 			  )]
 		);
 		
+		//add rounded_corners settings field
 		add_settings_field(
 			'rounded_corners',
 			'Rounded Corners',
@@ -102,6 +113,7 @@
 			[ 'id' => 'rounded_corners', 'label' => 'Select to add a light border radius']
 		);
 		
+		//add border settings field
 		add_settings_field(
 			'border',
 			'Border',
@@ -111,6 +123,7 @@
 			[ 'id' => 'border', 'label' => 'Select to add a 1px border']
 		);
 		
+		//add API key settings field
 		add_settings_field(
 			'api_key',
 			'API Key',

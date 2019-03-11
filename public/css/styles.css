@@ -38,15 +38,15 @@
     color: white; }
     .stevesweather.evening.border {
       border: 1px solid #476892; }
-  .stevesweather.green {
+  .stevesweather.mint {
     background: linear-gradient(45deg, #27A47C, #6FE594);
     color: white; }
-    .stevesweather.green.border {
+    .stevesweather.mint.border {
       border: 1px solid #27A47C; }
-  .stevesweather.salmon {
+  .stevesweather.bubblegum {
     background: linear-gradient(45deg, #F1467A, #FB949E);
     color: white; }
-    .stevesweather.salmon.border {
+    .stevesweather.bubblegum.border {
       border: 1px solid #F1467A; }
   .stevesweather.purple {
     background: linear-gradient(45deg, #4C15D0, #DA1FF2);
@@ -56,11 +56,11 @@
   .stevesweather.blush {
     background: linear-gradient(45deg, #FFC2D4, #DBFDEC);
     color: #4e4e4e; }
+    .stevesweather.blush.border {
+      border: 1px solid #FFC2D4; }
     .stevesweather.blush img.icon {
       filter: invert(100%);
       opacity: .7; }
-    .stevesweather.blush.border {
-      border: 1px solid #FFC2D4; }
   .stevesweather.orange {
     background: linear-gradient(45deg, #FB7140, #FB9951);
     color: white; }

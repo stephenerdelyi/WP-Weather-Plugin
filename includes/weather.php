@@ -38,29 +38,34 @@
 			}
 		}
 		
-		public function validAPIKey() {
-			if($this->apiResponse["cod"] == "200") {
-				return true;
-			}
-			
-			return false;
-		}
-		
 		public function render() {
-			wp_enqueue_style( 'stevesweather', plugin_dir_url( dirname( __FILE__ ) ) . 'public/css/styles.css', array(), null, 'screen' );
+			//add the plugin stylesheet to the wp style enqueue
+			wp_enqueue_style('stevesweather', plugin_dir_url(dirname(__FILE__)) . 'public/css/styles.css', array(), null, 'screen');
 			
+			//if the API key is valid and returning sound data
 			if($this->validAPIKey()) {
 				return 	'
-					<div class="stevesweather ' . $this->rounded . ' ' . $this->theme . ' ' . $this->border . '">
-						<p class="city">Weather for ' . $this->cityName . ', ' . $this->countryName . '</p>
-						<img class="icon" src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'public/icons/' . $this->icon . '.svg' . '"/>
-						<p class="temperature">' . $this->temperature . '&deg;' . $this->unitLetter . '</p>
-						<p class="conditions">' . $this->description . '</p>
+					<div class="clearfix">
+						<div class="stevesweather ' . $this->rounded . ' ' . $this->theme . ' ' . $this->border . '">
+							<p class="city">Weather for ' . $this->cityName . ', ' . $this->countryName . '</p>
+							<img class="icon" src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'public/icons/' . $this->icon . '.svg' . '"/>
+							<p class="temperature">' . $this->temperature . '&deg;' . $this->unitLetter . '</p>
+							<p class="conditions">' . $this->description . '</p>
+						</div>
 					</div>
 					';
 			} else {
 				return 'Could not display weather: OpenWeatherMap API Error.';
 			}	
+		}
+		
+		private function validAPIKey() {
+			//if the API response is 200 (ok)
+			if($this->apiResponse["cod"] == "200") {
+				return true;
+			}
+			
+			return false;
 		}
 	}
 ?>
